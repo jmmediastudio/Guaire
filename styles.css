@@ -247,6 +247,7 @@ h1 em, h2 em {
 
 /* ---------- nights ---------- */
 .night {
+  overflow-x: hidden; /* the car starts off-screen */
   background:
     radial-gradient(60% 50% at 85% 10%, rgba(154,107,255,.20), transparent 70%),
     radial-gradient(50% 40% at 10% 90%, rgba(200,25,26,.22), transparent 70%),
@@ -394,4 +395,44 @@ h1 em, h2 em {
   html { scroll-behavior: auto; }
   * { transition: none !important; }
   .night-line .lights.on { animation: none; }
+}
+
+/* 03:55: the lift home pulls in from the right and brakes */
+.night-line li.lift { opacity: 1; border-bottom: 0; }
+.road { grid-column: 1 / -1; position: relative; padding-top: 12px; }
+.car {
+  position: relative;
+  width: min(100%, 880px);
+  margin-left: auto;
+  transform-origin: 30% 100%;
+}
+.car img { position: relative; display: block; width: 100%; height: auto; }
+/* shadow on the tarmac */
+.car::after {
+  content: "";
+  position: absolute; left: 4%; right: 2%; bottom: -3%;
+  height: 10%;
+  background: radial-gradient(closest-side, rgba(0,0,0,.75), transparent);
+  z-index: -1;
+}
+/* headlight beam, thrown forward (the car faces left) */
+.beam {
+  position: absolute;
+  right: 95%; top: 40%;
+  width: 70%; height: 34%;
+  background: linear-gradient(to left, rgba(249,215,28,.38), rgba(249,215,28,0) 85%);
+  clip-path: polygon(100% 44%, 0 0, 0 100%, 100% 60%);
+  filter: blur(2px);
+  pointer-events: none;
+}
+.js .lift .car { transform: translateX(120vw); }
+.js .lift.in .car { animation: pull-in 1.5s cubic-bezier(.15, .75, .25, 1) forwards; }
+@keyframes pull-in {
+  0%   { transform: translateX(120vw) rotate(0); }
+  72%  { transform: translateX(-1.5%) rotate(0); }
+  84%  { transform: translateX(-.5%) rotate(-1.4deg); } /* nose dips under braking */
+  100% { transform: translateX(0) rotate(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .lift .car, .js .lift.in .car { transform: none; animation: none; }
 }
