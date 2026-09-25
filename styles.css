@@ -172,19 +172,49 @@ h1 em, h2 em {
 .lede { font-size: clamp(18px, 1.6vw, 22px); max-width: 34ch; margin: 0; }
 
 /* ---------- first look ---------- */
-.feature figure { margin: 0; background: #000; border-radius: 12px; overflow: hidden; }
-.feature img { display: block; width: 100%; height: auto; }
-.feature-info {
-  display: flex; flex-wrap: wrap;
-  align-items: flex-end; justify-content: space-between;
-  gap: 20px 48px;
-  padding-top: 24px;
+.feature-head { margin-bottom: clamp(24px, 3vw, 40px); }
+.feature-head h2 { font-size: clamp(36px, 4.6vw, 68px); }
+.products {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 3vw, 40px);
+  max-width: 900px;
 }
-.feature-info .kicker { margin-bottom: 10px; }
-.feature-info h2 { font-size: clamp(32px, 3.6vw, 52px); margin-bottom: 10px; }
-.feature-info p:not(.kicker) { margin: 0; max-width: 46ch; color: var(--dim); }
-.feature-buy { display: flex; align-items: center; gap: 20px; }
-.price-tag { font-family: var(--label); font-weight: 700; font-size: 22px; }
+.product-img {
+  position: relative;
+  margin: 0 0 14px;
+  aspect-ratio: 1414 / 2000;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.product-img img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: opacity .35s;
+}
+/* hover the Sign Tee to see the print close up */
+.product-img .alt { opacity: 0; }
+.product:hover .has-alt .alt { opacity: 1; }
+.product h3 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(20px, 2.2vw, 30px);
+  line-height: 1.05;
+  margin: 0 0 6px;
+}
+.product p { margin: 0 0 14px; color: var(--dim); font-size: 15px; max-width: 36ch; }
+.product { display: flex; flex-direction: column; }
+.product-buy { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-top: auto; }
+.price-tag { font-family: var(--label); font-weight: 700; font-size: 20px; }
+@media (max-width: 600px) {
+  .product p { font-size: 13px; }
+  .product .btn-sm { font-size: 14px; padding: 8px 11px 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .product-img img { transition: none; }
+}
 
 /* ---------- versus ---------- */
 .versus { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
