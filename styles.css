@@ -27,7 +27,8 @@
   --fluoro: #EEF3EF;
   --felt: #141214;
 
-  --display: "Ahsing", "Fraunces", Georgia, serif;
+  --display: "Racing Sans One", "Arial Black", sans-serif;
+  --brand: "Ahsing", "Fraunces", Georgia, serif;   /* the Guaire name: product names, stamp */
   --body: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --label: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
@@ -46,7 +47,7 @@ body {
   font-size: 17px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
-  font-synthesis: none; /* Ahsing ships one weight; don't fake-bold it */
+  font-synthesis: none; /* Racing Sans One and Ahsing ship one weight; don't fake-bold them */
 }
 /* flyer-print grain over everything */
 body::before {
@@ -198,7 +199,7 @@ h1 em, h2 em {
 .product-img .alt { opacity: 0; }
 .product:hover .has-alt .alt { opacity: 1; }
 .product h3 {
-  font-family: var(--display);
+  font-family: var(--brand);
   font-weight: 400;
   font-size: clamp(20px, 2.2vw, 30px);
   line-height: 1.05;
