@@ -135,14 +135,14 @@ h1 em, h2 em { font-style: normal; color: var(--green); }
 .nav nav a:not(.btn):hover { color: var(--green); }
 
 /* ---------- section frame ---------- */
-.hero, .feature, .versus, .drop, .idea, .guestlist {
+.hero, .versus, .drop, .idea, .guestlist {
   max-width: var(--max);
   margin: 0 auto;
   padding-left: var(--gutter);
   padding-right: var(--gutter);
 }
 .versus, .drop, .idea { padding-top: 40px; border-top: 1px solid var(--line); }
-.hero, .feature, .versus, .drop, .idea { padding-bottom: var(--section); }
+.hero, .versus, .drop, .idea { padding-bottom: var(--section); }
 
 /* ---------- hero ---------- */
 /* full-bleed landing: the valley photo behind a wash of white, fading into the page */
@@ -168,42 +168,48 @@ h1 em, h2 em { font-style: normal; color: var(--green); }
 }
 .lede { font-size: clamp(18px, 1.6vw, 22px); max-width: 34ch; margin: 0; }
 
-/* ---------- first look ---------- */
+/* ---------- first look: the tees, on the dancefloor (top of the night section) ---------- */
+.first-look {
+  grid-column: 1 / -1;
+  padding-bottom: clamp(48px, 7vw, 96px);
+  border-bottom: 1px solid var(--line-dark);
+}
 .feature-head { margin-bottom: clamp(24px, 3vw, 40px); }
 .feature-head h2 { font-size: clamp(36px, 4.6vw, 68px); }
 .products {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(14px, 3vw, 40px);
-  max-width: 900px;
+  gap: clamp(28px, 4vw, 56px);
 }
 .product { display: flex; flex-direction: column; }
+/* black tees on a black page: each sits in its own pool of club light */
 .product-img {
-  position: relative;
-  margin: 0 0 16px;
-  aspect-ratio: 2 / 3;
-  background: #EDEDEA;
-  overflow: hidden;
+  margin: 0 0 18px;
+  padding: 7% 5%;
+  background: radial-gradient(ellipse 58% 62% at 50% 50%, rgba(255,255,255,.17), rgba(255,255,255,.05) 55%, transparent 76%);
 }
 .product-img img {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-  transition: opacity .35s;
+  display: block;
+  width: 100%; height: auto;
+  filter: drop-shadow(0 22px 26px rgba(0,0,0,.75));
+  transition: transform .35s;
 }
+.product:hover .product-img img { transform: translateY(-4px); }
 .product h3 {
   font-family: var(--brand);
   font-weight: 400;
-  font-size: clamp(20px, 2.2vw, 30px);
+  font-size: clamp(22px, 2.2vw, 30px);
   line-height: 1.05;
   margin: 0 0 6px;
 }
-.product p { margin: 0 0 16px; color: var(--dim); font-size: 15px; max-width: 36ch; }
+.product p { margin: 0 0 16px; color: rgba(255,255,255,.66); font-size: 15px; max-width: 44ch; }
 .product-buy { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-top: auto; }
 .price-tag { font-family: var(--label); font-weight: 700; font-size: 17px; letter-spacing: .02em; }
-@media (max-width: 600px) {
-  .product p { font-size: 13px; }
-  .product .btn-sm { padding: 10px 12px; letter-spacing: .1em; }
+/* buttons flip to white on the dark section */
+.night .btn { background: var(--white); color: var(--ink); border-color: var(--white); }
+.night .btn:hover { background: var(--green-lt); border-color: var(--green-lt); }
+@media (max-width: 700px) {
+  .products { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
   .product-img img { transition: none; }
