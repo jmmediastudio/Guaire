@@ -640,3 +640,141 @@ h1 em, h2 em { font-style: normal; color: var(--green); }
 @media (prefers-reduced-motion: reduce) {
   .js .lift .car, .js .lift.in .car { transform: none; animation: none; }
 }
+
+/* ================= product pages (tees/*.html) ================= */
+.pdp .nav { position: relative; }
+.crumbs {
+  max-width: var(--max); margin: 0 auto;
+  padding: 4px var(--gutter) 24px;
+  display: flex; flex-wrap: wrap; gap: 6px 10px;
+  font-family: var(--label); font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .14em; color: var(--dim);
+}
+.crumbs a { text-decoration: none; }
+.crumbs a:hover { color: var(--green); }
+.crumbs [aria-current] { color: var(--ink); }
+
+.pdp-main {
+  max-width: var(--max); margin: 0 auto;
+  padding: 0 var(--gutter) var(--section);
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 80px);
+  align-items: start;
+}
+.gallery { position: sticky; top: 20px; }
+/* the stage: day tees on the valley, night tees on the dancefloor */
+.stage { aspect-ratio: 1 / 1; padding: 9%; overflow: hidden; }
+.pdp-day .stage {
+  background:
+    radial-gradient(ellipse 50% 50% at 50% 52%, rgba(250,250,248,.55), transparent 75%),
+    linear-gradient(rgba(250,250,248,.62), rgba(250,250,248,.72)),
+    url("images/guaire-landscape.jpg") center 60% / cover no-repeat;
+}
+.pdp-night .stage {
+  background:
+    radial-gradient(ellipse 52% 52% at 50% 52%, rgba(255,255,255,.18), transparent 72%),
+    linear-gradient(rgba(11,11,11,.72), rgba(11,11,11,.82)),
+    url("images/guaire-club.jpg") center 35% / cover no-repeat;
+}
+#stage-img {
+  display: block;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: 100% 50%;
+  filter: drop-shadow(0 22px 26px rgba(0,0,0,.45));
+}
+.pdp-night #stage-img { filter: drop-shadow(0 22px 26px rgba(0,0,0,.8)); }
+/* the mockup holds front (left half) and back (right half); a view is a crop of it */
+[data-view="back"]  { object-position: 100% 50% !important; }
+[data-view="front"] { object-position: 0% 50% !important; }
+#stage-img[data-view="both"], .thumbs img[data-view="both"] { object-fit: contain; }
+
+.thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px; }
+.thumbs button {
+  display: grid; gap: 6px; justify-items: center;
+  padding: 8px 8px 10px;
+  background: #EDEDEA;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-family: var(--label); font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .14em; color: var(--ink);
+}
+.pdp-night .thumbs button { background: var(--ink); color: var(--white); }
+.thumbs button[aria-pressed="true"] { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+.pdp-night .thumbs button[aria-pressed="true"] { border-color: var(--green-lt); box-shadow: inset 0 0 0 1px var(--green-lt); }
+.thumbs img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+
+.pdp-info .kicker { margin-bottom: 14px; }
+.pdp-name {
+  font-family: var(--brand);
+  font-weight: 400;
+  font-size: clamp(38px, 4.6vw, 68px);
+  line-height: 1;
+  margin: 0 0 14px;
+}
+.pdp-price { margin: 0 0 18px; font-family: var(--label); font-weight: 700; font-size: 22px; }
+.pdp-short { margin: 0 0 28px; font-size: 18px; max-width: 40ch; }
+.sizes ul { list-style: none; margin: 0 0 12px; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.sizes li {
+  min-width: 52px; padding: 11px 10px; text-align: center;
+  border: 1px solid var(--line);
+  font-family: var(--label); font-size: 13px; font-weight: 700; letter-spacing: .06em;
+}
+.fit-note { margin: 0; font-size: 14px; color: var(--dim); max-width: 44ch; }
+.btn-block { display: block; width: 100%; text-align: center; margin: 28px 0 10px; }
+.pdp-note { margin: 0 0 32px; font-size: 13px; color: var(--dim); }
+
+.pdp-details details { border-top: 1px solid var(--line); }
+.pdp-details details:last-child { border-bottom: 1px solid var(--line); }
+.pdp-details summary {
+  list-style: none;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 0;
+  cursor: pointer;
+  font-family: var(--label); font-size: 12px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .14em;
+}
+.pdp-details summary::-webkit-details-marker { display: none; }
+.pdp-details summary::after { content: "+"; font-size: 18px; font-weight: 400; }
+.pdp-details details[open] summary::after { content: "\2212"; }
+.pdp-details p { margin: 0 0 16px; font-size: 16px; max-width: 52ch; }
+.pdp-details .ref-title { font-family: var(--display); font-size: clamp(24px, 2.4vw, 32px); line-height: 1.1; color: var(--green); }
+
+/* the other tees */
+.more {
+  max-width: var(--max); margin: 0 auto;
+  padding: 40px var(--gutter) var(--section);
+  border-top: 1px solid var(--line);
+}
+.more h2 { font-size: clamp(36px, 4.6vw, 68px); margin-bottom: clamp(24px, 3vw, 40px); }
+.more-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 3vw, 40px); }
+.more-card { display: grid; gap: 6px; text-decoration: none; }
+.more-img { display: block; padding: 8% 6%; margin-bottom: 8px; transition: transform .3s; }
+.more-day .more-img { background: radial-gradient(ellipse 60% 62% at 50% 50%, #E6E6E2, rgba(230,230,226,.4) 60%, transparent 78%); }
+.more-night .more-img { background: radial-gradient(ellipse 58% 60% at 50% 50%, rgba(255,255,255,.16), transparent 72%), var(--ink); }
+.more-img img { display: block; width: 100%; height: auto; filter: drop-shadow(0 12px 16px rgba(0,0,0,.35)); }
+.more-card:hover .more-img { transform: translateY(-4px); }
+.more-name { font-family: var(--brand); font-size: clamp(20px, 2vw, 26px); line-height: 1.05; }
+.more-meta { font-family: var(--label); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--dim); }
+
+@media (max-width: 900px) {
+  .pdp-main { grid-template-columns: 1fr; }
+  .gallery { position: static; }
+}
+@media (max-width: 600px) {
+  .more-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .more-img { transition: none; }
+}
+
+/* links from the home page into the product pages */
+.product { position: relative; }
+.product h3 a { color: inherit; text-decoration: none; }
+/* the name link covers the whole card, so the image opens the tee page too */
+.product h3 a::after { content: ""; position: absolute; inset: 0; }
+.product-buy { position: relative; z-index: 1; }
+.product h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.menu a.item { color: inherit; text-decoration: none; }
+.menu a.item:hover { color: var(--gold-lt); }

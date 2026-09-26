@@ -1,28 +1,12 @@
-// Letterboard: split text into individual "plastic letters", each pushed in slightly crooked.
-// Seeded so the board looks the same on every load.
+// Product page gallery: the thumbnails switch the stage between back, front and both.
 (function () {
-  let seed = 7;
-  const rand = () => ((seed = (seed * 9301 + 49297) % 233280) / 233280) - 0.5;
-
-  document.querySelectorAll('[data-letters]').forEach((el) => {
-    const text = el.textContent;
-    el.setAttribute('aria-label', text);
-    el.textContent = '';
-    // Letters are grouped per word so lines only wrap between words.
-    text.split(' ').forEach((word, i) => {
-      if (i > 0) el.appendChild(document.createTextNode(' '));
-      const w = document.createElement('span');
-      w.setAttribute('aria-hidden', 'true');
-      w.style.whiteSpace = 'nowrap';
-      for (const ch of word) {
-        const span = document.createElement('span');
-        span.className = 'l';
-        span.textContent = ch;
-        span.style.setProperty('--y', (rand() * 2.4).toFixed(2) + 'px');
-        span.style.setProperty('--r', (rand() * 5).toFixed(2) + 'deg');
-        w.appendChild(span);
-      }
-      el.appendChild(w);
+  const stage = document.getElementById('stage-img');
+  if (!stage) return;
+  const buttons = document.querySelectorAll('.thumbs button');
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      stage.dataset.view = btn.dataset.view;
+      buttons.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
     });
   });
 })();
@@ -32,6 +16,7 @@
   const form = document.getElementById('wl-form');
   const input = document.getElementById('email');
   const msg = document.getElementById('wl-msg');
+  if (!form) return;
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
