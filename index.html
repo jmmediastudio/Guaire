@@ -10,7 +10,7 @@
 <link rel="apple-touch-icon" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Fraunces:opsz,wght,SOFT,WONK@9..144,900,100,1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Doto:wght@800&family=Fraunces:opsz,wght,SOFT,WONK@9..144,900,100,1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -100,53 +100,49 @@
     </div>
   </section>
 
-  <!-- DROP 01 LETTERBOARD -->
+  <!-- DROP 01: THE CHIPPER SCREEN -->
   <section class="drop" id="drop" aria-labelledby="drop-h">
     <div class="drop-intro">
       <p class="kicker">The menu</p>
       <h2 id="drop-h">Drop 01</h2>
-      <p>Seven pieces, made in small runs. The two tees are up top; the rest get photos the week before launch. The guest list sees them first.</p>
+      <p>Five pieces for the launch: two tees, two hoodies and a cap. Made in small runs. The guest list gets served first.</p>
     </div>
 
-    <div class="board" role="group" aria-label="Drop 01 menu">
-      <p class="board-title" data-letters>Drop 01 — Menu</p>
-      <ul class="menu">
-        <li>
-          <span class="item" data-letters>Guaire Sign Tee</span>
-          <span class="price" data-letters>€45</span>
-          <span class="note">Black heavyweight tee. The Guaire sign across the back.</span>
-        </li>
-        <li>
-          <span class="item" data-letters>Guaire Original Tee</span>
-          <span class="price" data-letters>€45</span>
-          <span class="note">Black tee. Fizzy orange oval, bubbles and all.</span>
-        </li>
-        <li>
-          <span class="item" data-letters>Last Bus Hoodie</span>
-          <span class="price" data-letters>€120</span>
-          <span class="note">Brushed fleece for waiting at a stop that may or may not be served.</span>
-        </li>
-        <li>
-          <span class="item" data-letters>Soft Day Shell</span>
-          <span class="price" data-letters>€140</span>
-          <span class="note">Light rain jacket. Packs into its own pocket for the four seasons before lunch.</span>
-        </li>
-        <li>
-          <span class="item" data-letters>Grand Knit</span>
-          <span class="price" data-letters>€130</span>
-          <span class="note">Lambswool crew in school-jumper maroon. It's grand.</span>
-        </li>
-        <li>
-          <span class="item" data-letters>Training Lift Quarter Zip</span>
-          <span class="price" data-letters>€95</span>
-          <span class="note">For the back seat on the way home, gear bag at your feet.</span>
-        </li>
-        <li>
-          <span class="item" data-letters>Stall The Ball Cap</span>
-          <span class="price" data-letters>€35</span>
-          <span class="note">Six-panel, embroidered. Take it easy.</span>
-        </li>
-      </ul>
+    <div class="screen" role="group" aria-label="Drop 01 menu">
+      <div class="screen-top">
+        <img class="screen-logo" src="images/guaire-logo-white.png" width="1425" height="489" alt="" aria-hidden="true">
+        <span class="open"><span class="dot" aria-hidden="true"></span>Open late</span>
+      </div>
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>Now serving Drop 01 ★ Order by the number ★ Guest list served first ★ Cash or card ★ Open til 4am ★&nbsp;</span>
+          <span>Now serving Drop 01 ★ Order by the number ★ Guest list served first ★ Cash or card ★ Open til 4am ★&nbsp;</span>
+        </div>
+      </div>
+
+      <div class="screen-grid">
+        <div class="menu-group">
+          <h3>Tees</h3>
+          <ul class="menu">
+            <li><span class="num">1</span><span class="item">Guaire Sign Tee</span><span class="price">€45</span><span class="note">Black heavyweight. The Guaire sign across the back.</span></li>
+            <li><span class="num">2</span><span class="item">Guaire Original Tee</span><span class="price">€45</span><span class="note">Black. Fizzy orange oval, bubbles and all.</span></li>
+          </ul>
+        </div>
+        <div class="menu-group">
+          <h3>Hoodies</h3>
+          <ul class="menu">
+            <li><span class="num">3</span><span class="item">Last Bus Hoodie</span><span class="price">€120</span><span class="note">Brushed fleece for a stop that may or may not be served.</span></li>
+            <li><span class="num">4</span><span class="item">Afters Hoodie</span><span class="price">€120</span><span class="note">Oversized and warm, for the kitchen at 5am.</span></li>
+          </ul>
+        </div>
+        <div class="menu-group">
+          <h3>Caps</h3>
+          <ul class="menu">
+            <li><span class="num">5</span><span class="item">Stall The Ball Cap</span><span class="price">€35</span><span class="note">Six-panel, embroidered. Take it easy.</span></li>
+          </ul>
+        </div>
+        <a class="menu-extra" href="#guestlist">★ Guest list served first ★</a>
+      </div>
     </div>
   </section>
 

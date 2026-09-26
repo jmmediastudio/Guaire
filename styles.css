@@ -235,41 +235,148 @@ h1 em, h2 em { font-style: normal; color: var(--green); }
 .drop-intro h2 { font-size: clamp(48px, 6vw, 88px); margin-bottom: 18px; }
 .drop-intro p:not(.kicker) { margin: 0; max-width: 30ch; color: var(--dim); }
 
-/* the chipper letterboard: black felt, white letters, a brass frame */
-.board {
-  background-color: var(--felt);
-  background-image: repeating-linear-gradient(to bottom, rgba(255,255,255,.04) 0 1px, transparent 1px 7px);
-  border: 10px solid transparent;
-  border-image: linear-gradient(135deg, #7E6337, var(--gold-lt) 40%, #8C6E3E 60%, var(--gold-lt)) 1;
-  box-shadow: inset 0 0 0 1px #000, inset 0 10px 24px rgba(0,0,0,.7), 0 20px 40px -24px rgba(0,0,0,.5);
+/* the chipper's digital menu screen, as seen at 3am */
+.screen {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(80% 60% at 20% 0%, rgba(255,255,255,.05), transparent 60%),
+    #050505;
   color: var(--white);
-  padding: clamp(24px, 4vw, 48px) clamp(18px, 3.5vw, 44px);
+  border: 12px solid #161616;               /* the bezel */
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px #2B2B2B, 0 30px 60px -30px rgba(0,0,0,.6);
 }
-.board-title {
+/* scanlines over the whole screen */
+.screen::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(to bottom, rgba(255,255,255,.028) 0 1px, transparent 1px 3px);
+  pointer-events: none;
+}
+.screen-top {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 16px clamp(16px, 3vw, 28px);
+  border-bottom: 1px solid #1F1F1F;
+}
+.screen-logo { display: block; width: clamp(84px, 9vw, 110px); height: auto; }
+.open {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: "Doto", var(--label);
+  font-weight: 800;
+  font-size: clamp(15px, 1.6vw, 19px);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--green-lt);
+  text-shadow: 0 0 8px rgba(127,179,149,.7);
+}
+.open .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--green-lt);
+  box-shadow: 0 0 8px var(--green-lt);
+  animation: blink 1.6s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: .15; } }
+
+/* LED ticker */
+.ticker {
+  overflow: hidden;
+  white-space: nowrap;
+  background: #07100B;
+  border-bottom: 1px solid #1F1F1F;
+  padding: 9px 0;
+}
+.ticker-track { display: inline-flex; animation: ticker 26s linear infinite; }
+.ticker span {
+  font-family: "Doto", var(--label);
+  font-weight: 800;
+  font-size: clamp(15px, 1.6vw, 19px);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--green-lt);
+  text-shadow: 0 0 8px rgba(127,179,149,.65);
+}
+@keyframes ticker { to { transform: translateX(-50%); } }
+
+.screen-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(22px, 3vw, 34px) clamp(24px, 3.5vw, 44px);
+  padding: clamp(20px, 3vw, 32px) clamp(16px, 3vw, 28px) clamp(22px, 3vw, 32px);
+}
+.menu-group h3 {
   font-family: var(--label);
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
-  font-size: clamp(16px, 2vw, 24px);
-  letter-spacing: .12em;
-  text-align: center;
+  letter-spacing: .22em;
   color: var(--gold-lt);
-  margin: 0 0 clamp(20px, 3vw, 36px);
+  margin: 0 0 6px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(210,180,127,.35);
 }
 .menu { list-style: none; margin: 0; padding: 0; }
-.menu li { display: grid; grid-template-columns: 1fr auto; column-gap: 16px; padding: 14px 0; }
-.menu li + li { border-top: 1px dashed rgba(255,255,255,.12); }
-.item, .price {
+.menu li {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  column-gap: 12px;
+  align-items: baseline;
+  padding: 12px 0;
+}
+.menu li + li { border-top: 1px solid #1C1C1C; }
+.num {
+  display: inline-grid; place-items: center;
+  width: 26px; height: 26px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  font-family: "Doto", var(--label);
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--green-lt);
+  align-self: center;
+}
+.item {
   font-family: var(--label);
   font-weight: 700;
   text-transform: uppercase;
-  font-size: clamp(14px, 1.6vw, 20px);
-  letter-spacing: .1em;
-  line-height: 1.3;
+  font-size: clamp(14px, 1.4vw, 17px);
+  letter-spacing: .06em;
+  line-height: 1.25;
 }
-.price { text-align: right; }
-.note { grid-column: 1 / -1; font-size: 14px; color: rgba(255,255,255,.55); margin-top: 4px; max-width: 52ch; }
-/* each plastic letter sits a little off */
-.l { display: inline-block; transform: translateY(var(--y, 0)) rotate(var(--r, 0)); text-shadow: 0 1px 0 rgba(0,0,0,.6); }
+.price {
+  font-family: "Doto", var(--label);
+  font-weight: 800;
+  font-size: clamp(20px, 2vw, 26px);
+  line-height: 1;
+  color: var(--gold-lt);
+  text-shadow: 0 0 10px rgba(210,180,127,.55);
+  text-align: right;
+}
+.note { grid-column: 2 / -1; font-size: 13px; color: rgba(255,255,255,.5); margin-top: 4px; }
+.menu-extra {
+  align-self: end;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Doto", var(--label);
+  font-weight: 800;
+  font-size: clamp(15px, 1.6vw, 19px);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--green-lt);
+  text-shadow: 0 0 8px rgba(127,179,149,.6);
+  border: 1px dashed rgba(127,179,149,.5);
+  border-radius: 4px;
+  padding: 14px;
+  transition: background .2s;
+}
+.menu-extra:hover { background: rgba(127,179,149,.1); }
+@media (max-width: 700px) {
+  .screen-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track, .open .dot { animation: none; }
+}
 
 /* ---------- nights: the one black section ---------- */
 .night {
