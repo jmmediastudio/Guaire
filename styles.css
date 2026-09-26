@@ -273,13 +273,23 @@ h1 em, h2 em { font-style: normal; color: var(--green); }
 
 /* ---------- nights: the one black section ---------- */
 .night {
+  position: relative;
   overflow-x: hidden; /* the car starts off-screen */
-  background:
-    radial-gradient(55% 45% at 85% 8%, rgba(127,179,149,.10), transparent 70%),
-    var(--ink);
+  background: var(--ink);
   color: var(--white);
 }
+/* the dancefloor photo across the top, under a dark wash that fades to black before the timeline */
+.night::before {
+  content: "";
+  position: absolute; top: 0; left: 0; right: 0;
+  height: clamp(640px, 110vh, 1000px);
+  background:
+    linear-gradient(to bottom, rgba(11,11,11,.62) 0%, rgba(11,11,11,.72) 55%, var(--ink) 100%),
+    url("images/guaire-club.jpg") center 35% / cover no-repeat;
+  pointer-events: none;
+}
 .night-inner {
+  position: relative; /* above the photo */
   max-width: var(--max); margin: 0 auto;
   padding: var(--section) var(--gutter);
   display: grid;
