@@ -181,7 +181,7 @@ h1 em, h2 em { font-style: normal; color: var(--green); }
 .product-img {
   position: relative;
   margin: 0 0 16px;
-  aspect-ratio: 1414 / 2000;
+  aspect-ratio: 2 / 3;
   background: #EDEDEA;
   overflow: hidden;
 }
@@ -191,9 +191,6 @@ h1 em, h2 em { font-style: normal; color: var(--green); }
   object-fit: cover;
   transition: opacity .35s;
 }
-/* hover the Sign Tee to see the print close up */
-.product-img .alt { opacity: 0; }
-.product:hover .has-alt .alt { opacity: 1; }
 .product h3 {
   font-family: var(--brand);
   font-weight: 400;
