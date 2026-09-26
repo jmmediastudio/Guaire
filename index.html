@@ -30,6 +30,9 @@
 
 <main id="main">
 
+  <!-- LANDING: the valley photo runs behind the hero and the day tees -->
+  <div class="landing">
+
   <!-- HERO -->
   <section class="hero" id="top">
     <p class="kicker">Drop 01 · Autumn 2026 · Designed in Ireland</p>
@@ -44,16 +47,17 @@
   <section class="first-look" id="first-look" aria-labelledby="feature-h">
     <div class="feature-head">
       <p class="kicker">First look · Drop 01</p>
-      <h2 id="feature-h">Two tees <em>to start.</em></h2>
+      <h2 id="feature-h">Four tees <em>to start.</em></h2>
+      <p class="feature-sub">Two for the day. <a href="#night-tees">Two for the night.</a></p>
     </div>
     <div class="products">
       <article class="product">
         <figure class="product-img">
-          <img src="images/guaire-sign-tee-flat.png" width="977" height="475" loading="lazy"
-               alt="Black oversized tee, front and back: a small white Guaire logo on the chest and the red and yellow Guaire sign across the back.">
+          <img src="images/guaire-tog-go-bog-tee-flat.png" width="977" height="475" loading="lazy"
+               alt="Black oversized tee, front and back: a small white Guaire logo on the chest and a green Irish road sign reading 'Tóg go bog é, GUAIRE' with a red 'Temporary surface' plate across the back.">
         </figure>
-        <h3>Guaire Sign Tee</h3>
-        <p>Oversized black tee. Small Guaire on the chest, the red and yellow sign across the back.</p>
+        <h3>Tóg Go Bog É Tee</h3>
+        <p>Oversized black tee. A green Irish road sign on the back: take it easy, temporary surface ahead.</p>
         <div class="product-buy">
           <span class="price-tag">€45</span>
           <a class="btn btn-sm" href="#guestlist">Get it first</a>
@@ -61,11 +65,11 @@
       </article>
       <article class="product">
         <figure class="product-img">
-          <img src="images/guaire-original-tee-flat.png" width="977" height="475" loading="lazy"
-               alt="Black oversized tee, front and back: a small white Guaire logo on the chest and a sky-blue Guaire Original oval with bubbles across the back.">
+          <img src="images/guaire-sideline-tee-flat.png" width="977" height="475" loading="lazy"
+               alt="Black oversized tee, front and back: a small white Guaire logo on the chest and a photo of GUAIRE painted as a white line on pitch grass across the back.">
         </figure>
-        <h3>Guaire Original Tee</h3>
-        <p>Oversized black tee. Small Guaire on the chest, the sky-blue Original oval and bubbles across the back.</p>
+        <h3>Sideline Tee</h3>
+        <p>Oversized black tee. GUAIRE painted on the pitch, like the lines on every Sunday morning.</p>
         <div class="product-buy">
           <span class="price-tag">€45</span>
           <a class="btn btn-sm" href="#guestlist">Get it first</a>
@@ -73,6 +77,8 @@
       </article>
     </div>
   </section>
+
+  </div>
 
   <!-- NOT THE POSTCARD -->
   <section class="versus" aria-labelledby="versus-h">
@@ -129,11 +135,32 @@
         <p class="night-lead-big">GUAIRE is what you wear through all of it.</p>
       </div>
 
-      <figure class="night-shot">
-        <img src="images/guaire-original-tee-flat.png" width="977" height="475" loading="lazy"
-             alt="The black Guaire Original Tee, front and back: a small white Guaire logo on the chest and the sky-blue Original oval with bubbles across the back.">
-        <figcaption>Guaire Original Tee · €45 · <a href="#first-look">See it</a></figcaption>
-      </figure>
+      <div class="products night-products" id="night-tees">
+        <article class="product">
+          <figure class="product-img">
+            <img src="images/guaire-sign-tee-flat.png" width="977" height="475" loading="lazy"
+                 alt="Black oversized tee, front and back: a small white Guaire logo on the chest and the red and yellow Guaire sign across the back.">
+          </figure>
+          <h3>Guaire Sign Tee</h3>
+          <p>Oversized black tee. Small Guaire on the chest, the red and yellow sign across the back.</p>
+          <div class="product-buy">
+            <span class="price-tag">€45</span>
+            <a class="btn btn-sm" href="#guestlist">Get it first</a>
+          </div>
+        </article>
+        <article class="product">
+          <figure class="product-img">
+            <img src="images/guaire-original-tee-flat.png" width="977" height="475" loading="lazy"
+                 alt="Black oversized tee, front and back: a small white Guaire logo on the chest and a sky-blue Guaire Original oval with bubbles across the back.">
+          </figure>
+          <h3>Guaire Original Tee</h3>
+          <p>Oversized black tee. Small Guaire on the chest, the sky-blue Original oval and bubbles across the back.</p>
+          <div class="product-buy">
+            <span class="price-tag">€45</span>
+            <a class="btn btn-sm" href="#guestlist">Get it first</a>
+          </div>
+        </article>
+      </div>
 
       <div class="night-stamp">
         <svg class="stamp" viewBox="0 0 280 120" aria-hidden="true" focusable="false">
@@ -221,7 +248,7 @@
     <div class="drop-intro">
       <p class="kicker">The menu</p>
       <h2 id="drop-h">Drop 01</h2>
-      <p>Five pieces for the launch: two tees, two hoodies and a cap. Made in small runs. The guest list gets served first.</p>
+      <p>Seven pieces for the launch: four tees, two hoodies and a cap. Made in small runs. The guest list gets served first.</p>
     </div>
 
     <div class="screen" role="group" aria-label="Drop 01 menu">
@@ -240,21 +267,23 @@
         <div class="menu-group">
           <h3>Tees</h3>
           <ul class="menu">
-            <li><span class="num">1</span><span class="item">Guaire Sign Tee</span><span class="price">€45</span><span class="note">Black heavyweight. The Guaire sign across the back.</span></li>
-            <li><span class="num">2</span><span class="item">Guaire Original Tee</span><span class="price">€45</span><span class="note">Black. Sky-blue oval, bubbles and all.</span></li>
+            <li><span class="num">1</span><span class="item">Tóg Go Bog É Tee</span><span class="price">€45</span><span class="note">Black. A green road sign: take it easy.</span></li>
+            <li><span class="num">2</span><span class="item">Sideline Tee</span><span class="price">€45</span><span class="note">Black. GUAIRE painted on the pitch.</span></li>
+            <li><span class="num">3</span><span class="item">Guaire Sign Tee</span><span class="price">€45</span><span class="note">Black heavyweight. The Guaire sign across the back.</span></li>
+            <li><span class="num">4</span><span class="item">Guaire Original Tee</span><span class="price">€45</span><span class="note">Black. Sky-blue oval, bubbles and all.</span></li>
           </ul>
         </div>
         <div class="menu-group">
           <h3>Hoodies</h3>
           <ul class="menu">
-            <li><span class="num">3</span><span class="item">Last Bus Hoodie</span><span class="price">€120</span><span class="note">Brushed fleece for a stop that may or may not be served.</span></li>
-            <li><span class="num">4</span><span class="item">Afters Hoodie</span><span class="price">€120</span><span class="note">Oversized and warm, for the kitchen at 5am.</span></li>
+            <li><span class="num">5</span><span class="item">Last Bus Hoodie</span><span class="price">€120</span><span class="note">Brushed fleece for a stop that may or may not be served.</span></li>
+            <li><span class="num">6</span><span class="item">Afters Hoodie</span><span class="price">€120</span><span class="note">Oversized and warm, for the kitchen at 5am.</span></li>
           </ul>
         </div>
         <div class="menu-group">
           <h3>Caps</h3>
           <ul class="menu">
-            <li><span class="num">5</span><span class="item">Stall The Ball Cap</span><span class="price">€35</span><span class="note">Six-panel, embroidered. Take it easy.</span></li>
+            <li><span class="num">7</span><span class="item">Stall The Ball Cap</span><span class="price">€35</span><span class="note">Six-panel, embroidered. Take it easy.</span></li>
           </ul>
         </div>
         <a class="menu-extra" href="#guestlist">★ Guest list served first ★</a>
