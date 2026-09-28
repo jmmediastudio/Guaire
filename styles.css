@@ -89,7 +89,7 @@ h1 em, h2 em { font-style: normal; color: var(--green); }
 
 /* ---------- logo ---------- */
 .logo { display: block; line-height: 0; }
-.logo img { display: block; width: clamp(130px, 13vw, 180px); height: auto; }
+.logo img { display: block; width: clamp(40px, 4vw, 52px); height: auto; }
 .foot-logo { display: block; width: clamp(110px, 11vw, 140px); height: auto; }
 
 /* ---------- buttons ---------- */
