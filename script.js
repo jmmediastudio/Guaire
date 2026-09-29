@@ -1,11 +1,11 @@
-// Product page gallery: the thumbnails switch the stage between back, front and both.
+// Product page gallery: each thumbnail swaps the stage to its own back, front or both image.
 (function () {
   const stage = document.getElementById('stage-img');
   if (!stage) return;
   const buttons = document.querySelectorAll('.thumbs button');
   buttons.forEach((btn) => {
     btn.addEventListener('click', () => {
-      stage.dataset.view = btn.dataset.view;
+      stage.src = btn.dataset.src;
       buttons.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
     });
   });

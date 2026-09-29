@@ -666,7 +666,7 @@ h1 em, h2 em { font-style: normal; color: var(--green); }
 }
 .gallery { position: sticky; top: 20px; }
 /* the stage: day tees on the valley, night tees on the dancefloor */
-.stage { aspect-ratio: 1 / 1; padding: 9%; overflow: hidden; }
+.stage { position: relative; aspect-ratio: 1 / 1; overflow: hidden; }
 .pdp-day .stage {
   background:
     radial-gradient(ellipse 50% 50% at 50% 52%, rgba(250,250,248,.55), transparent 75%),
@@ -679,18 +679,15 @@ h1 em, h2 em { font-style: normal; color: var(--green); }
     linear-gradient(rgba(11,11,11,.72), rgba(11,11,11,.82)),
     url("images/guaire-club.jpg") center 35% / cover no-repeat;
 }
+/* each view is its own trimmed image, centred and never enlarged past its real size */
 #stage-img {
-  display: block;
-  width: 100%; height: 100%;
-  object-fit: cover;
-  object-position: 100% 50%;
+  position: absolute; inset: 0;
+  margin: auto;
+  width: auto; height: auto;
+  max-width: 84%; max-height: 84%;
   filter: drop-shadow(0 22px 26px rgba(0,0,0,.45));
 }
 .pdp-night #stage-img { filter: drop-shadow(0 22px 26px rgba(0,0,0,.8)); }
-/* the mockup holds front (left half) and back (right half); a view is a crop of it */
-[data-view="back"]  { object-position: 100% 50% !important; }
-[data-view="front"] { object-position: 0% 50% !important; }
-#stage-img[data-view="both"], .thumbs img[data-view="both"] { object-fit: contain; }
 
 .thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px; }
 .thumbs button {
@@ -705,7 +702,7 @@ h1 em, h2 em { font-style: normal; color: var(--green); }
 .pdp-night .thumbs button { background: var(--ink); color: var(--white); }
 .thumbs button[aria-pressed="true"] { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
 .pdp-night .thumbs button[aria-pressed="true"] { border-color: var(--green-lt); box-shadow: inset 0 0 0 1px var(--green-lt); }
-.thumbs img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+.thumbs img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: contain; padding: 6%; }
 
 .pdp-info .kicker { margin-bottom: 14px; }
 .pdp-name {
