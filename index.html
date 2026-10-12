@@ -3,134 +3,180 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GUAIRE — The Ireland we actually grew up in</title>
-<meta name="description" content="GUAIRE is Irish clothing about modern Irish life. Drop 01: five oversized tees, Autumn 2026. Get on the guest list for early access.">
-<meta name="theme-color" content="#F7F6F2">
+<title>GUAIRE — Raised on the sideline</title>
+<meta name="description" content="GUAIRE is Irish clothing with a sporting streak. Drop 01: five oversized tees, Autumn 2026. Get on the team sheet for early access.">
+<meta name="theme-color" content="#0A0A0A">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..500,0..100;1,9..144,300..500,0..100&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <a class="skip" href="#main">Skip to content</a>
 
-<p class="bar"><span class="bar-when">Drop 01 · Autumn 2026 · </span><a href="#guestlist">Guest list gets 24 hours early</a></p>
+<p class="bar"><span class="bar-when">Drop 01 / Autumn 2026 / </span><a href="#guestlist">Team sheet gets 24h early access</a></p>
 
 <header class="nav">
   <nav class="nav-left" aria-label="Main">
     <a href="#shop">Shop</a>
+    <a href="#kit">The kit</a>
     <a href="#idea">About</a>
   </nav>
-  <a class="logo" href="#top"><img src="images/guaire-logo-black.png" width="1425" height="489" alt="Guaire home"></a>
+  <a class="logo" href="#top" aria-label="Guaire home">
+    <svg class="logo-mark" viewBox="0 0 64 32" aria-hidden="true"><path d="M52.6 8.4A27 12.5 0 1 0 59 16H35" fill="none" stroke="currentColor" stroke-width="5.5"/></svg>
+    <span class="logo-word">Guaire</span>
+  </a>
   <div class="nav-right">
-    <a href="#guestlist">Guest list</a>
+    <a class="nav-cta" href="#guestlist">Team sheet</a>
   </div>
 </header>
 
 <main id="main">
 
-  <!-- HERO: the day and the night, side by side -->
+  <!-- HERO -->
   <section class="hero" id="top" aria-labelledby="hero-h">
-    <figure class="hero-half">
-      <img src="images/guaire-landscape.jpg" width="1500" height="2000" alt="A green valley under heavy grey cloud in the west of Ireland.">
-      <figcaption>Day</figcaption>
-    </figure>
-    <figure class="hero-half">
-      <img src="images/guaire-club.jpg" width="2000" height="1333" alt="A packed dancefloor, hands up, lit through smoke.">
-      <figcaption>Night</figcaption>
-    </figure>
     <div class="hero-copy">
-      <p class="eyebrow">Drop 01 · Autumn 2026</p>
-      <h1 id="hero-h">The Ireland we <em>actually</em> grew up in.</h1>
-      <a class="link" href="#shop">Shop the drop</a>
+      <p class="label"><span class="dot" aria-hidden="true"></span>Drop 01 / Autumn 2026</p>
+      <h1 id="hero-h">Raised on the <span class="volt">sideline.</span></h1>
+      <p class="hero-sub">Irish clothing with a sporting streak. Five oversized tees, made in small runs.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-volt" href="#shop">Shop Drop 01</a>
+        <a class="btn btn-ghost" href="#guestlist">Join the team sheet</a>
+      </div>
+      <dl class="hero-specs">
+        <div><dt>Pieces</dt><dd>05</dd></div>
+        <div><dt>Price</dt><dd>€45</dd></div>
+        <div><dt>Runs</dt><dd>Small</dd></div>
+      </dl>
     </div>
+    <figure class="hero-media">
+      <img src="images/guaire-hero-pitch.jpg" width="1600" height="2400" alt="A player in a black tee walks a football onto a floodlit pitch, seen from behind.">
+      <figcaption class="label">GR / 01 — Tuesday training</figcaption>
+    </figure>
   </section>
+
+  <!-- TICKER -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Guaire</span><i></i><span>Drop 01</span><i></i><span>Raised on the sideline</span><i></i><span>Designed in Ireland</span><i></i>
+      <span>Guaire</span><i></i><span>Drop 01</span><i></i><span>Raised on the sideline</span><i></i><span>Designed in Ireland</span><i></i>
+    </div>
+  </div>
 
   <!-- SHOP -->
   <section class="shop" id="shop" aria-labelledby="shop-h">
-    <div class="shop-head">
-      <h2 id="shop-h" class="eyebrow">Drop 01</h2>
-      <p class="eyebrow dim">5 pieces</p>
+    <div class="section-head">
+      <h2 id="shop-h">Drop 01</h2>
+      <p class="label dim">05 pieces / Oversized / €45</p>
     </div>
 
     <div class="grid">
       <a class="card" href="tees/tog-go-bog-e.html">
         <span class="tile">
+          <span class="code label">GR—01</span>
           <img src="images/guaire-tog-go-bog-tee-back.png" width="505" height="489" alt="Back of a black oversized tee: a green Irish road sign reading 'Tóg go bog é, GUAIRE'.">
           <img class="alt" src="images/guaire-tog-go-bog-tee-front.png" width="508" height="491" alt="" loading="lazy">
         </span>
         <span class="card-name">Tóg Go Bog É Tee</span>
-        <span class="card-meta">Black · Oversized</span>
+        <span class="card-meta">Black / Oversized</span>
         <span class="card-price">€45</span>
       </a>
       <a class="card" href="tees/sideline.html">
         <span class="tile">
+          <span class="code label">GR—02</span>
           <img src="images/guaire-sideline-tee-back.png" width="505" height="489" alt="Back of a black oversized tee: GUAIRE painted as a white line on pitch grass.">
           <img class="alt" src="images/guaire-sideline-tee-front.png" width="508" height="491" alt="" loading="lazy">
         </span>
         <span class="card-name">Sideline Tee</span>
-        <span class="card-meta">Black · Oversized</span>
+        <span class="card-meta">Black / Oversized</span>
         <span class="card-price">€45</span>
       </a>
       <a class="card" href="tees/sign.html">
         <span class="tile">
+          <span class="code label">GR—03</span>
           <img src="images/guaire-sign-tee-back.png" width="577" height="593" alt="Back of a black oversized tee: the red and yellow Guaire sign.">
           <img class="alt" src="images/guaire-sign-tee-front.png" width="578" height="591" alt="" loading="lazy">
         </span>
         <span class="card-name">Guaire Sign Tee</span>
-        <span class="card-meta">Black · Oversized</span>
+        <span class="card-meta">Black / Oversized</span>
         <span class="card-price">€45</span>
       </a>
       <a class="card" href="tees/original.html">
         <span class="tile">
+          <span class="code label">GR—04</span>
           <img src="images/guaire-original-tee-back.png" width="505" height="489" alt="Back of a black oversized tee: a sky-blue Guaire Original oval with bubbles." loading="lazy">
           <img class="alt" src="images/guaire-original-tee-front.png" width="508" height="491" alt="" loading="lazy">
         </span>
         <span class="card-name">Guaire Original Tee</span>
-        <span class="card-meta">Black · Oversized</span>
+        <span class="card-meta">Black / Oversized</span>
         <span class="card-price">€45</span>
       </a>
       <a class="card" href="tees/bring-back-the-night.html">
         <span class="tile">
+          <span class="code label">GR—05</span>
           <img src="images/guaire-night-tee-back.png" width="577" height="593" alt="Back of a black oversized tee: the Guaire wordmark over a bottle-green 90s coupé and the words 'Bring back the night.'" loading="lazy">
           <img class="alt" src="images/guaire-night-tee-front.png" width="578" height="591" alt="" loading="lazy">
         </span>
         <span class="card-name">Bring Back The Night Tee</span>
-        <span class="card-meta">Black · Oversized</span>
+        <span class="card-meta">Black / Oversized</span>
         <span class="card-price">€45</span>
       </a>
       <a class="card card-note" href="#guestlist">
         <span class="tile">
+          <span class="code label">GR—06 / 07</span>
           <span class="note-copy">
-            <span class="eyebrow">Coming next</span>
-            <span class="note-line">Hoodies and a cap, later in the drop.</span>
-            <span class="link">Get on the guest list</span>
+            <span class="label volt">Coming next</span>
+            <span class="note-line">Hoodies and a cap. Later in the drop.</span>
+            <span class="link">Get on the team sheet</span>
           </span>
         </span>
       </a>
     </div>
   </section>
 
-  <!-- ONE LINE OF SOUL -->
-  <section class="band">
-    <p>Made for the day, the night <em>and the morning after.</em></p>
+  <!-- BAND -->
+  <section class="band" aria-label="Rain or shine">
+    <p class="label">Field note / 01</p>
+    <p class="band-line">Rain or shine. <span class="volt">Usually rain.</span></p>
+  </section>
+
+  <!-- THE KIT -->
+  <section class="kit" id="kit" aria-labelledby="kit-h">
+    <figure class="kit-media">
+      <img src="images/guaire-fog-ride.jpg" width="1400" height="1867" alt="A cyclist in black rides away down a wet road into thick fog." loading="lazy">
+    </figure>
+    <div class="kit-copy">
+      <p class="label dim">The kit</p>
+      <h2 id="kit-h">Built for the long season.</h2>
+      <ol class="specs">
+        <li><span class="label">01</span><div><h3>Heavyweight cotton</h3><p>Dense and structured, made to take a season of wear.</p></div></li>
+        <li><span class="label">02</span><div><h3>Boxy, oversized fit</h3><p>Dropped shoulders and room to move.</p></div></li>
+        <li><span class="label">03</span><div><h3>Small runs</h3><p>When a drop's gone, it's gone.</p></div></li>
+        <li><span class="label">04</span><div><h3>Designed in Ireland</h3><p>From the Sunday pitch to the Saturday night.</p></div></li>
+      </ol>
+    </div>
   </section>
 
   <!-- THE IDEA -->
   <section class="idea" id="idea" aria-labelledby="idea-h">
-    <p class="eyebrow">The idea</p>
-    <h2 id="idea-h">If you know, <em>you know.</em></h2>
-    <p class="idea-body">Clothes built from the everyday stuff of Irish life: the deli counter, the Sunday pitch, the sign over the chipper, the lift home. No shamrocks. Designed in Ireland, made in small runs.</p>
+    <div class="idea-copy">
+      <p class="label dim">The idea</p>
+      <h2 id="idea-h">If you know, <span class="volt">you know.</span></h2>
+      <p class="idea-body">Guaire is built from Irish sport and everything around it: the club pitch under floodlights, the drive to the away game, the sign over the chipper after. No shamrocks. Designed in Ireland, made in small runs.</p>
+    </div>
+    <figure class="idea-media">
+      <img src="images/guaire-floodlight.jpg" width="1100" height="1650" alt="A floodlight burns through heavy snow at night above a stadium roof." loading="lazy">
+    </figure>
   </section>
 
-  <!-- GUEST LIST -->
+  <!-- TEAM SHEET -->
   <section class="guestlist" id="guestlist" aria-labelledby="gl-h">
-    <p class="eyebrow">Guest list</p>
-    <h2 id="gl-h">First in, before Drop 01 goes live.</h2>
-    <p class="gl-sub">One email when it lands, and 24 hours early access. Nothing else.</p>
+    <p class="label dim">Team sheet</p>
+    <h2 id="gl-h">Get your name on the team sheet.</h2>
+    <p class="gl-sub">One email when Drop 01 lands, and 24 hours' early access. Nothing else.</p>
     <form class="gl-form" id="wl-form" novalidate>
       <label for="email" class="visually-hidden">Email address</label>
       <input id="email" name="email" type="email" autocomplete="email" placeholder="Email address" required>
@@ -143,10 +189,9 @@
 
 <footer class="foot">
   <div class="foot-top">
-    <img class="foot-logo" src="images/guaire-logo-white.png" width="1425" height="489" alt="Guaire">
     <div class="foot-cols">
       <div>
-        <p class="eyebrow">Shop</p>
+        <p class="label">Shop</p>
         <a href="tees/tog-go-bog-e.html">Tóg Go Bog É Tee</a>
         <a href="tees/sideline.html">Sideline Tee</a>
         <a href="tees/sign.html">Guaire Sign Tee</a>
@@ -154,20 +199,22 @@
         <a href="tees/bring-back-the-night.html">Bring Back The Night Tee</a>
       </div>
       <div>
-        <p class="eyebrow">Guaire</p>
+        <p class="label">Guaire</p>
+        <a href="#kit">The kit</a>
         <a href="#idea">About</a>
-        <a href="#guestlist">Guest list</a>
+        <a href="#guestlist">Team sheet</a>
         <a href="https://instagram.com/" rel="noopener">Instagram</a>
       </div>
     </div>
+    <div class="foot-lift">
+      <img src="images/guaire-car-green.png" width="1400" height="425" alt="" loading="lazy">
+      <span>Your lift's outside.</span>
+    </div>
   </div>
-  <div class="foot-lift">
-    <img src="images/guaire-car-green.png" width="1400" height="425" alt="" loading="lazy">
-    <span>Your lift's outside.</span>
-  </div>
+  <p class="foot-word" aria-hidden="true">Guaire</p>
   <div class="foot-base">
-    <span>© 2026 Guaire · Designed in Ireland</span>
-    <a href="https://www.vecteezy.com" rel="noopener">Car vector by Vecteezy.com</a>
+    <span>© 2026 Guaire / Designed in Ireland</span>
+    <span>Photos: Unsplash / <a href="https://www.vecteezy.com" rel="noopener">Car vector by Vecteezy.com</a></span>
   </div>
 </footer>
 
