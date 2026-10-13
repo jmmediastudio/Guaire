@@ -179,28 +179,13 @@ a:hover .arrow-link::before, .arrow-link:hover::before { transform: translateX(3
   object-fit: cover;
   animation: hero-in 1.6s cubic-bezier(.2,.7,.2,1) backwards;
 }
-.hero-a img { object-position: center 30%; transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
-.hero-a:hover img { transform: scale(1.025); }
+.hero-a img { object-position: center 30%; }
 .hero-b img { object-position: center 35%; animation-delay: .15s; }
 .hero::after {
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(to top, rgba(0,0,0,.62), rgba(0,0,0,.15) 45%, transparent 70%);
   pointer-events: none;
 }
-/* shoppable tag on the photo: what he's wearing */
-.hero-tag {
-  position: absolute; left: var(--gutter); top: clamp(18px, 2.4vw, 32px); z-index: 2;
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 9px 12px;
-  background: rgba(255, 255, 255, .92);
-  color: var(--black);
-  font-size: 11px; font-weight: 700;
-  text-transform: uppercase; letter-spacing: .04em;
-  animation: hero-rise .9s .6s cubic-bezier(.2,.7,.2,1) backwards;
-}
-.hero-tag span { color: var(--grey); }
-.hero-tag::after { content: "\2192"; font-weight: 400; transition: transform .25s; }
-.hero-a:hover .hero-tag::after { transform: translateX(3px); }
 .hero-copy {
   position: absolute; left: calc(50% + var(--gutter)); bottom: clamp(32px, 4.5vw, 64px); z-index: 2;
   max-width: calc(50% - 2 * var(--gutter));
@@ -286,6 +271,19 @@ a.section-meta:hover { color: var(--black); }
 .card-price { grid-column: 2; grid-row: 2; font-size: 13px; font-weight: 700; }
 .card-meta { grid-column: 1; font-size: 13px; color: var(--grey); }
 
+
+/* one product for now: back and front side by side, details underneath */
+.feature { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(6px, .8vw, 12px); }
+.feature .tile { grid-column: auto; aspect-ratio: 1 / 1; margin: 0; }
+.feature .tile:hover img { transform: scale(1.03); }
+.feature-info {
+  grid-column: 1 / -1;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 14px 32px;
+  padding-top: 14px;
+}
+.feature-info .card-name { display: block; font-size: 15px; text-decoration: none; }
+.feature-info .card-meta { margin: 4px 0 0; }
+.feature-info .card-price { margin: 0 0 0 auto; font-size: 15px; }
 
 /* ---------- lookbook: the collage layout, one tall shot then a 2x2 ---------- */
 .lb-grid {
@@ -508,6 +506,8 @@ a.section-meta:hover { color: var(--black); }
   .mood-grid img:last-child { grid-column: 1 / -1; aspect-ratio: 16 / 10; }
 }
 @media (max-width: 600px) {
+  .feature-info .card-price { margin-left: 0; }
+  .feature-info .btn { width: 100%; }
   .nav-left a + a { display: none; }
   .logo-mark { width: 52px; }
   .logo-word { font-size: 12px; letter-spacing: .26em; margin-right: -.26em; }
