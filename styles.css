@@ -160,11 +160,11 @@ a:hover .arrow-link::before, .arrow-link:hover::before { transform: translateX(3
   margin-right: -.32em;
 }
 
-/* ---------- hero: two photos, edge to edge ---------- */
+/* ---------- hero: one full-bleed photo, the fog on the bog road ---------- */
 .hero {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   height: min(calc(100svh - 96px), 960px);
   grid-template-rows: minmax(0, 1fr);
   overflow: hidden;
@@ -172,23 +172,20 @@ a:hover .arrow-link::before, .arrow-link:hover::before { transform: translateX(3
   background: var(--black);
   color: var(--white);
 }
-/* night (the tee, on someone, outside the club) | day (the fog on the bog road) */
-.hero-a, .hero-b { position: relative; display: block; min-height: 0; overflow: hidden; }
-.hero-a img, .hero-b img {
+.hero-media { position: relative; display: block; min-height: 0; overflow: hidden; }
+.hero-media img {
   display: block; width: 100%; height: 100%;
-  object-fit: cover;
+  object-fit: cover; object-position: center 60%;
   animation: hero-in 1.6s cubic-bezier(.2,.7,.2,1) backwards;
 }
-.hero-a img { object-position: center 30%; }
-.hero-b img { object-position: center 35%; animation-delay: .15s; }
 .hero::after {
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(to top, rgba(0,0,0,.62), rgba(0,0,0,.15) 45%, transparent 70%);
   pointer-events: none;
 }
 .hero-copy {
-  position: absolute; left: calc(50% + var(--gutter)); bottom: clamp(32px, 4.5vw, 64px); z-index: 2;
-  max-width: calc(50% - 2 * var(--gutter));
+  position: absolute; left: var(--gutter); bottom: clamp(32px, 4.5vw, 64px); z-index: 2;
+  max-width: calc(100% - 2 * var(--gutter));
   pointer-events: none;
 }
 .hero-copy a { pointer-events: auto; }
@@ -515,9 +512,7 @@ a.section-meta:hover { color: var(--black); }
   .nav-left a + a { display: none; }
   .logo-mark { width: 52px; }
   .logo-word { font-size: 12px; letter-spacing: .26em; margin-right: -.26em; }
-  .hero { grid-template-columns: 1fr; height: 82svh; }
-  .hero-b { display: none; }
-  .hero-copy { left: var(--gutter); max-width: calc(100% - 2 * var(--gutter)); }
+  .hero { height: 82svh; }
   .foot-top { flex-direction: column; align-items: flex-start; }
 }
 @media (prefers-reduced-motion: reduce) {
