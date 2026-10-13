@@ -26,7 +26,7 @@
       input.focus();
       return;
     }
-    msg.textContent = "Sorted, you're on the team sheet. We'll email you before Drop 01 goes live.";
+    msg.textContent = "Sorted, you're on the guest list. We'll email you before Drop 01 goes live.";
     form.reset();
   });
 })();
