@@ -33,7 +33,7 @@ img { max-width: 100%; }
 a { color: inherit; }
 figure { margin: 0; }
 :focus-visible { outline: 2px solid var(--black); outline-offset: 3px; }
-.hero :focus-visible, .foot :focus-visible, .card-photo:focus-visible { outline-color: var(--white); }
+.hero :focus-visible, .foot :focus-visible { outline-color: var(--white); }
 .visually-hidden {
   position: absolute !important; width: 1px; height: 1px;
   overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
@@ -211,13 +211,13 @@ a:hover .arrow-link::before, .arrow-link:hover::before { transform: translateX(3
 a.section-meta:hover { color: var(--black); }
 
 /* ---------- latest releases ---------- */
-.shop, .mood {
+.shop, .lookbook, .mood {
   max-width: var(--max); margin: 0 auto;
   padding: var(--section) var(--gutter) 0;
 }
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: clamp(32px, 4vw, 48px) clamp(6px, .8vw, 12px);
 }
 .card {
@@ -259,25 +259,16 @@ a.section-meta:hover { color: var(--black); }
 .card-price { grid-column: 2; grid-row: 2; font-size: 13px; font-weight: 700; }
 .card-meta { grid-column: 1; font-size: 13px; color: var(--grey); }
 
-/* the sixth tile: a photo teasing what's next */
-.card-photo .tile img {
-  max-width: none; max-height: none;
-  width: 100%; height: 100%;
-  object-fit: cover;
-  filter: none;
+
+/* ---------- lookbook: the collage layout, one tall shot then a 2x2 ---------- */
+.lb-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, .8fr);
+  grid-auto-rows: clamp(240px, 26vw, 420px);
+  gap: clamp(6px, .8vw, 12px);
 }
-.card-photo:hover .tile img { opacity: 1; }
-.card-photo .tile::after {
-  content: ""; position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,.6), transparent 50%);
-}
-.tile-copy {
-  position: absolute; left: 20px; right: 20px; bottom: 20px; z-index: 1;
-  display: grid; justify-items: start; gap: 6px;
-  color: var(--white);
-}
-.tile-kicker { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; opacity: .8; }
-.tile-title { font-size: clamp(20px, 2vw, 28px); font-weight: 700; text-transform: uppercase; line-height: 1.05; margin-bottom: 10px; }
+.lb-grid img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.lb-tall { grid-row: span 2; object-position: center 20%; }
 
 /* ---------- the idea ---------- */
 .idea {
@@ -476,7 +467,13 @@ a.section-meta:hover { color: var(--black); }
 .more-meta { font-size: 13px; color: var(--grey); }
 
 /* ---------- responsive ---------- */
+@media (max-width: 1200px) {
+  .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
 @media (max-width: 900px) {
+  .lb-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: auto; }
+  .lb-grid img { aspect-ratio: 4 / 5; height: auto; }
+  .lb-tall { grid-row: auto; grid-column: 1 / -1; aspect-ratio: 3 / 4 !important; }
   .grid, .more-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .pdp-main, .idea { grid-template-columns: 1fr; }
   .gallery { position: static; }
