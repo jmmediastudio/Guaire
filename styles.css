@@ -274,7 +274,9 @@ a.section-meta:hover { color: var(--black); }
 
 /* one product for now: back and front side by side, details underneath */
 .feature { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(6px, .8vw, 12px); }
-.feature .tile { grid-column: auto; aspect-ratio: 1 / 1; margin: 0; }
+.feature .tile { grid-column: auto; aspect-ratio: 5 / 4; margin: 0; }
+/* product shots are ~600px wide: cap them at half that so high-density screens show them sharp */
+.feature .tile img { max-width: min(62%, 300px); max-height: 80%; }
 .feature .tile:hover img { transform: scale(1.03); }
 .feature-info {
   grid-column: 1 / -1;
@@ -410,7 +412,7 @@ a.section-meta:hover { color: var(--black); }
   align-items: start;
 }
 .gallery { position: sticky; top: 76px; }
-.stage { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: var(--tile); }
+.stage { position: relative; aspect-ratio: 1 / 1; overflow: hidden; background: var(--tile); }
 /* each view is its own trimmed image, centred and never enlarged past its real size */
 #stage-img {
   position: absolute; inset: 0;
@@ -419,6 +421,8 @@ a.section-meta:hover { color: var(--black); }
   max-width: 80%; max-height: 76%;
   filter: drop-shadow(0 18px 22px rgba(0,0,0,.18));
 }
+#stage-img { max-width: min(70%, 300px); }
+#stage-img[src*="flat"] { max-width: min(90%, 600px); }
 .thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 6px; }
 .thumbs button {
   display: grid; gap: 6px; justify-items: center;
