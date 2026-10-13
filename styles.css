@@ -284,15 +284,15 @@ a.section-meta:hover { color: var(--black); }
 .feature-info .card-meta { margin: 4px 0 0; }
 .feature-info .card-price { margin: 0 0 0 auto; font-size: 15px; }
 
-/* ---------- lookbook: the collage layout, one tall shot then a 2x2 ---------- */
+/* ---------- lookbook: one row of five, kept small because the source photos are only ~400-480px wide ---------- */
 .lb-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, .8fr);
-  grid-auto-rows: clamp(240px, 26vw, 420px);
+  grid-template-columns: repeat(5, minmax(0, 240px));
+  justify-content: center;
   gap: clamp(6px, .8vw, 12px);
 }
-.lb-grid img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.lb-tall { grid-row: span 2; object-position: center 20%; }
+.lb-grid img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+.lb-tall { object-position: center 18%; }
 
 /* ---------- the idea ---------- */
 .idea {
@@ -497,9 +497,7 @@ a.section-meta:hover { color: var(--black); }
   .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 900px) {
-  .lb-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: auto; }
-  .lb-grid img { aspect-ratio: 4 / 5; height: auto; }
-  .lb-tall { grid-row: auto; grid-column: 1 / -1; aspect-ratio: 3 / 4 !important; }
+  .lb-grid { grid-template-columns: repeat(3, minmax(0, 220px)); }
   .grid, .more-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .pdp-main, .idea { grid-template-columns: 1fr; }
   .gallery { position: static; }
@@ -507,6 +505,7 @@ a.section-meta:hover { color: var(--black); }
   .mood-grid img:last-child { grid-column: 1 / -1; aspect-ratio: 16 / 10; }
 }
 @media (max-width: 600px) {
+  .lb-grid { grid-template-columns: repeat(2, minmax(0, 200px)); }
   .feature-info .card-price { margin-left: 0; }
   .feature-info .btn { width: 100%; }
   .nav-left a + a { display: none; }
